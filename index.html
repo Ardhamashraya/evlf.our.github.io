@@ -1,113 +1,74 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EVLF.OUR | Kenangan Kelas XI.4</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; }
-    header { text-align: center; padding: 20px; background: #222; color: white; }
-    header img { height: 80px; margin-bottom: 10px; }
-    nav { background: #444; display: flex; justify-content: center; flex-wrap: wrap; }
-    nav a { color: white; padding: 12px 20px; text-decoration: none; display: block; }
-    nav a:hover { background: #666; }
-    main { padding: 20px; max-width: 900px; margin: auto; }
-    .page { display: none; animation: fadeIn 0.3s ease-in-out; }
-    .active { display: block; }
-    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
-    ol.nama-list { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    ol.nama-list li { padding: 6px 0; border-bottom: 1px solid #ddd; }
-    ol.nama-list li:last-child { border-bottom: none; }
-    footer { background: #222; color: white; text-align: center; padding: 10px; margin-top: 20px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVLF.OUR - Kenangan XI.4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        header {
+            background: #004080;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            height: 50px;
+        }
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        footer {
+            background: #004080;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="https://share.google/zTSuoIHeZiE2cQm6O" alt="Logo SMAN 1 Cluring">
-    <h1>EVLF.OUR</h1>
-    <p>Selamat datang di website kenangan kelas XI.4</p>
-  </header>
 
-  <nav>
-    <a onclick="showPage('beranda')">Beranda</a>
-    <a onclick="showPage('teman')">Nama Teman</a>
-    <a onclick="showPage('kenangan')">Kenangan</a>
-    <a onclick="showPage('galeri')">Galeri</a>
-    <a onclick="showPage('tentang')">Tentang</a>
-  </nav>
+<header>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="logo-sman1cluring.png" alt="Logo Smaring">
+        <h1>EVLF.OUR</h1>
+    </div>
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="nama-teman.html">Nama Teman</a>
+        <a href="kenangan.html">Kenangan</a>
+    </nav>
+</header>
 
-  <main>
-    <section id="beranda" class="page active">
-      <h2>Beranda</h2>
-      <p>Website ini dibuat untuk menyimpan kenangan kelas XI.4 – EVLF.OUR.</p>
-    </section>
+<main>
+    <h2>Selamat Datang di Website Kenangan XI.4</h2>
+    <p>Tempat menyimpan momen-momen berharga selama kita bersama di SMA Negeri 1 Cluring.</p>
+</main>
 
-    <section id="teman" class="page">
-      <h2>Nama Teman</h2>
-      <ol class="nama-list">
-        <li>Akbar Aprillia Wicaksono</li>
-        <li>Amellisa</li>
-        <li>Amira Ahsani Zahra</li>
-        <li>Anisa Riski Oktalia</li>
-        <li>Azizah Nur Alfi Mudrikah</li>
-        <li>Chelsea Tri Lestari</li>
-        <li>Claudio Taffarel Sensa</li>
-        <li>Cyntia Ellen</li>
-        <li>Denisa Meta Nurviyanti</li>
-        <li>Desy Puspita Ningrum</li>
-        <li>Dwi Nurfitasari</li>
-        <li>Early Nazwa Nafisatus Shofa</li>
-        <li>Fadli Royan Firdaus</li>
-        <li>Faizha Tri Anugrah</li>
-        <li>Farel Sapta Ramadhan</li>
-        <li>Firda Dwi Nuramalia</li>
-        <li>M. Anas Fahreza</li>
-        <li>Medina Fani Setiyowati</li>
-        <li>Mifta Takeiya Nur Annisa</li>
-        <li>Mohamad Kevin Abdilah</li>
-        <li>Mohamad Sabil Firmansyah</li>
-        <li>Natasya Prahesti Reqita Cahya</li>
-        <li>Naura Shofi Salsabila</li>
-        <li>Nur Syafikah Ramadhani</li>
-        <li>Rafi Achmad Sukristianto</li>
-        <li>Rahma Amelia Zahra</li>
-        <li>Raihan Firdaust</li>
-        <li>Revalina Afiola</li>
-        <li>Richard Dwiky Albertino</li>
-        <li>Rifky Farell Adriano</li>
-        <li>Rinno Septa Ramadhan</li>
-        <li>Sakira Ramadhani</li>
-        <li>Victor Halim Maulana</li>
-        <li>Vira Puspitasari</li>
-      </ol>
-    </section>
+<footer>
+    &copy; 2025 EVLF.OUR - XI.4 Smaring | Semua Hak Dilindungi
+</footer>
 
-    <section id="kenangan" class="page">
-      <h2>Kenangan</h2>
-      <p>Kumpulan momen kebersamaan kita di kelas XI.4.</p>
-    </section>
-
-    <section id="galeri" class="page">
-      <h2>Galeri</h2>
-      <p>Foto-foto pilihan kelas kita.</p>
-    </section>
-
-    <section id="tentang" class="page">
-      <h2>Tentang</h2>
-      <p>EVLF.OUR adalah website kenangan kelas XI.4 SMAN 1 Cluring, dibuat oleh Mohamad Sabil Firmansyah untuk semua teman sekelas.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 EVLF.OUR - XI.4 SMAN 1 Cluring</p>
-  </footer>
-
-  <script>
-    function showPage(id) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
 </body>
-      </html>
+</html>
