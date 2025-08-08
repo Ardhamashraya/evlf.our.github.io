@@ -1,0 +1,4 @@
+Host: www
+Type: CNAME
+Value: evlf.our.github.io.github.io
+TTL: 3600
