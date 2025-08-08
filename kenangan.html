@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Kenangan XI.4 - Foto Kelas</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); gap: 5px; padding: 10px; }
+    .grid img { width: 100%; cursor: pointer; border-radius: 4px; }
+    .lightbox {
+      display: none; position: fixed; top: 0; left: 0;
+      width: 100vw; height: 100vh; background: rgba(0,0,0,0.8);
+      align-items: center; justify-content: center;
+    }
+    .lightbox img { max-width: 90%; max-height: 90%; border-radius: 4px; }
+    .lightbox .nav { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; }
+    .lightbox .nav span { color: white; font-size: 2rem; margin: 0 20px; cursor: pointer; user-select: none; }
+  </style>
+</head>
+<body>
+
+<h2 style="text-align:center; padding:10px">Kenangan Kelas XI.4</h2>
+<div class="grid" id="gallery"></div>
+
+<div class="lightbox" id="lightbox">
+  <div class="nav">
+    <span id="prev">&larr;</span>
+    <span id="next">&rarr;</span>
+  </div>
+  <img id="lightbox-img" src="" alt="Foto besar">
+</div>
+
+<script>
+  const photos = [
+    "https://drive.google.com/uc?id=FILE_ID1",
+    "https://drive.google.com/uc?id=FILE_ID2",
+    "https://drive.google.com/uc?id=FILE_ID3"
+    // Tambahkan semua link direct gambar di sini
+  ];
+
+  const gallery = document.getElementById('gallery');
+  photos.forEach((url, idx) => {
+    const img = document.createElement('img');
+    img.src = url;
+    img.dataset.index = idx;
+    img.addEventListener('click', () => openLightbox(idx));
+    gallery.appendChild(img);
+  });
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  let current = 0;
+
+  function openLightbox(i) {
+    current = i;
+    lightboxImg.src = photos[current];
+    lightbox.style.display = 'flex';
+  }
+  function closeLightbox() { lightbox.style.display = 'none'; }
+  function showPrev() { current = (current - 1 + photos.length) % photos.length; lightboxImg.src = photos[current]; }
+  function showNext() { current = (current + 1) % photos.length; lightboxImg.src = photos[current]; }
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  prevBtn.onclick = (e) => { e.stopPropagation(); showPrev(); };
+  nextBtn.onclick = (e) => { e.stopPropagation(); showNext(); };
+</script>
+
+</body>
+  </html>
